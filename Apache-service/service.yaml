@@ -58,7 +58,7 @@ Resources:
                 - Name: website-service
                   Essential: true
                   Image: 788965751552.dkr.ecr.us-west-2.amazonaws.com/wp-ecr:apache2.4
-                  Memory: 128
+                  Memory: 256
                   PortMappings:
                     - ContainerPort: 80
                   LogConfiguration:

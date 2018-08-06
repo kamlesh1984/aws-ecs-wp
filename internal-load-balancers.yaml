@@ -39,7 +39,7 @@ Resources:
         Properties:
             LoadBalancerArn: !Ref LoadBalancer
             Port: 80
-            Protocol: HTTP 
+            Protocol: HTTP
             DefaultActions: 
                 - Type: forward
                   TargetGroupArn: !Ref DefaultTargetGroup
@@ -69,7 +69,13 @@ Resources:
             HealthCheckProtocol: HTTP
             HealthCheckTimeoutSeconds: 5
             HealthyThresholdCount: 2
-           
+            TargetGroupAttributes:
+                - Key: stickiness.enabled
+                  Value: true
+                - Key: stickiness.type
+                  Value: lb_cookie
+                - Key: stickiness.lb_cookie.duration_seconds
+                  Value: '600'
 Outputs:
 
     InternalLoadBalancer:

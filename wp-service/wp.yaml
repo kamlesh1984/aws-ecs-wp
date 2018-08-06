@@ -58,7 +58,7 @@ Resources:
                 - Name: wp-service
                   Essential: true
                   Image: 788965751552.dkr.ecr.us-west-2.amazonaws.com/wp-ecr:wordpress
-                  Memory: 128
+                  Memory: 512
                   PortMappings:
                     - ContainerPort: 80
                   LogConfiguration:
